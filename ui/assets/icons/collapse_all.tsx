@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTheme } from '@sistent/sistent';
 
-const CollapseAllIcon = (props) => {
+const CollapseAllIcon = (props ) =>{
   const theme = useTheme();
 
   return (

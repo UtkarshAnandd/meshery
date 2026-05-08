@@ -1,6 +1,6 @@
 import React from "react";
 
-const ContentFilterIcon = (props) => {
+const ContentFilterIcon = (props : React.SVGProps<SVGSVGElement>) => {
   return (
     <svg
       id="content-filter-icon-svg"
