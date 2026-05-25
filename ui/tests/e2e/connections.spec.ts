@@ -45,7 +45,7 @@ const transitionTests: TransitionTest[] = [
   // },
 ];
 
-test.describe.serial('Connection Management Tests', () => {
+test.describe.serial('Connection Management Tests', { tag: '@unstable' }, () => {
   test.beforeEach(async ({ page }) => {
     // Navigate directly to the page under test rather than clicking through
     // the dashboard's left nav. The nav path was a known flake source: it

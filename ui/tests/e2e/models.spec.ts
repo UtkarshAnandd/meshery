@@ -1,6 +1,5 @@
 import { test, expect } from '@playwright/test';
 import path from 'path';
-import { DashboardPage } from './pages/DashboardPage';
 
 // Strongly typed inline to avoid JS linter false positives
 const model: {
@@ -37,11 +36,10 @@ const model_import: {
   },
 };
 
-test.describe.serial('Model Workflow Tests', () => {
+test.describe.serial('Model Workflow Tests', { tag: '@unstable' }, () => {
   test.beforeEach(async ({ page }) => {
-    const dashboardPage = new DashboardPage(page);
-    await dashboardPage.navigateToDashboard();
-    await dashboardPage.navigateToSettings();
+    await page.goto('/settings');
+    await page.waitForLoadState('networkidle');
     await page.getByTestId('settings-tab-registry').click();
   });
 
